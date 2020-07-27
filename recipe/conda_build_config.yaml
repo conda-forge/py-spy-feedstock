@@ -1,5 +1,4 @@
-docker_image:
+cuda_compiler_version:                    # [linux64]
+  - None                                  # [linux64]
+docker_image:                             # [linux64]
   - condaforge/linux-anvil-cos7-x86_64    # [linux64]
-  - condaforge/linux-anvil-comp7          # [not linux64]
-  - condaforge/linux-anvil-ppc64le        # [ppc64le]
-  - condaforge/linux-anvil-aarch64        # [aarch64]
