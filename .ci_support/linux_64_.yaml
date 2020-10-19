@@ -9,7 +9,6 @@ channel_targets:
 docker_image:
 - condaforge/linux-anvil-cos7-x86_64
 libunwind:
-- '1.2'
-pin_run_as_build:
-  libunwind:
-    max_pin: x.x
+- '1'
+target_platform:
+- linux-64
