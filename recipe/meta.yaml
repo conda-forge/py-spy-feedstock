@@ -1,4 +1,4 @@
-{% set version = "0.3.3" %}
+{% set version = "0.3.4" %}
 
 package:
   name: py-spy
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/benfred/py-spy/archive/v{{ version }}.tar.gz
-  sha256: 41454d3d9132da45c72f7574faaff65f40c757720293a277ffa5ec5a4b44f902
+  sha256: 307564cac2a5c577c4217d682f47529fc20eddf4739cac4fecbd7c4d7158fa64
 
 build:
-  number: 2
+  number: 0
   # Builds on Linux need a newer glibc: https://github.com/conda-forge/conda-forge.github.io/issues/900
   missing_dso_whitelist:   # [osx]
     - /usr/lib/libresolv.9.dylib  # [osx]
