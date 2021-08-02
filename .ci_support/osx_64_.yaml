@@ -10,7 +10,9 @@ channel_targets:
 - conda-forge main
 macos_machine:
 - x86_64-apple-darwin13.4.0
-rust:
+rust_compiler:
+- rust
+rust_compiler_version:
 - '1.46'
 target_platform:
 - osx-64
