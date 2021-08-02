@@ -16,9 +16,9 @@ build:
 
 requirements:
   build:
-    - rust
     - sysroot_linux-64 2.17  # [linux64]
     - {{ compiler('c') }}
+    - {{ compiler('rust') }}
   host:
     - libunwind  # [linux]
   run:

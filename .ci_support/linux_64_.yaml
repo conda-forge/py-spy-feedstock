@@ -12,6 +12,8 @@ docker_image:
 - condaforge/linux-anvil-cos7-x86_64
 libunwind:
 - '1'
+rust_compiler:
+- rust
 target_platform:
 - linux-64
 zip_keys:
