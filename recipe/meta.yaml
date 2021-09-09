@@ -1,4 +1,4 @@
-{% set version = "0.3.8" %}
+{% set version = "0.3.9" %}
 
 package:
   name: py-spy
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/benfred/py-spy/archive/v{{ version }}.tar.gz
-  sha256: 9dbfd0ea79ef31a2966891e86cf6238ed3831938cf562e71848e07b7009cf57d
+  sha256: 1e3d240def5357e6096a3e8a37a60bbe3c28515e4590b752109510f35d237170
 
 build:
   number: 0
