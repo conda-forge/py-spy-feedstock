@@ -9,7 +9,7 @@ source:
   sha256: 094cfb80e2c099763453fc39cfa9c46cfa423afa858268c6a7bc0d867763b014
 
 build:
-  number: 0
+  number: 1
   # Builds on Linux need a newer glibc: https://github.com/conda-forge/conda-forge.github.io/issues/900
   missing_dso_whitelist:   # [osx]
     - /usr/lib/libresolv.9.dylib  # [osx]
