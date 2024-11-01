@@ -1,3 +1,4 @@
+{% set name = "py-spy" %}
 {% set version = "0.4.0" %}
 
 package:
