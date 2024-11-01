@@ -1,4 +1,5 @@
 {% set name = "py-spy" %}
+{% set pypi_name = "py_spy" %}
 {% set version = "0.4.0" %}
 
 package:
@@ -6,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ pypi_name }}-{{ version }}.tar.gz
   sha256: 806602ce7972782cc9c1e383f339bfc27bfb822d42485e6a3e0530ae5040e1f0
 
 build:
