@@ -1,4 +1,4 @@
-{% set version = "0.3.14" %}
+{% set version = "0.4.0" %}
 
 package:
   name: py-spy
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/benfred/py-spy/archive/v{{ version }}.tar.gz
-  sha256: c01da8b74be0daba79781cfc125ffcd3df3a0d090157fe0081c71da2f6057905
+  sha256: 13a5c4b949947425670eedac05b6dd27edbc736b75f1587899efca1a7ef79ac3
 
 build:
   number: 0
@@ -16,8 +16,8 @@ build:
 
 requirements:
   build:
-    - sysroot_linux-64 2.17  # [linux64]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('rust') }}
   host:
     - libunwind  # [linux]
