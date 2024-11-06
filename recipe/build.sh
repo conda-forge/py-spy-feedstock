@@ -10,7 +10,9 @@ fi
 
 if [[ "${target_platform}" == "linux-64" ]]; then
   export BUILD_ARGS="--features unwind"
-fi
+else
+  export BUILD_ARGS=""
+fi  
 
 # build statically linked binary with Rust
 cargo install $BUILD_ARGS --locked --root "$PREFIX" --path .
