@@ -11,7 +11,7 @@ else
 fi
 
 # build statically linked binary with Rust
-cargo install --locked --root "$PREFIX" --path "$BUILD_ARGS" .
+cargo install "$BUILD_ARGS" --locked --root "$PREFIX" --path .
 
 # strip debug symbols
 "$STRIP" "$PREFIX/bin/py-spy"
