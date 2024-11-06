@@ -8,11 +8,11 @@ else
   export RUSTFLAGS="-C link-arg=-Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
 fi
 
-if [[ "${target_platform}" == "linux-64" ]]; then
+if [[ "${target_platform}" =~ ^(linux-64|win-64)$ ]]; then
   export BUILD_ARGS="--features unwind"
 else
   export BUILD_ARGS=""
-fi  
+fi
 
 # build statically linked binary with Rust
 cargo install $BUILD_ARGS --locked --root "$PREFIX" --path .
