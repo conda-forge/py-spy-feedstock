@@ -2,11 +2,13 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
-if [ $(uname) = Darwin ] ; then
+if [[ "${target_platform}" == osx-* ]]; then
   export RUSTFLAGS="-C link-args=-Wl,-rpath,${PREFIX}/lib"
-  export BUILD_ARGS=""
 else
   export RUSTFLAGS="-C link-arg=-Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
+fi
+
+if [[ "${target_platform}" == "linux-64" ]]; then
   export BUILD_ARGS="--features unwind"
 fi
 
