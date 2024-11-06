@@ -7,7 +7,7 @@ if [ $(uname) = Darwin ] ; then
   export BUILD_ARGS=""
 else
   export RUSTFLAGS="-C link-arg=-Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
-  export BUILD_ARGS="--feature unwind"
+  export BUILD_ARGS="--features unwind"
 fi
 
 # build statically linked binary with Rust
