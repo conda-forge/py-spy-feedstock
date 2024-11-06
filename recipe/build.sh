@@ -4,12 +4,14 @@ set -o xtrace -o nounset -o pipefail -o errexit
 
 if [ $(uname) = Darwin ] ; then
   export RUSTFLAGS="-C link-args=-Wl,-rpath,${PREFIX}/lib"
+  export BUILD_ARGS=""
 else
-  export RUSTFLAGS="-C link-arg=-Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib --features-unwind"
+  export RUSTFLAGS="-C link-arg=-Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
+  export BUILD_ARGS="--feature unwind"
 fi
 
 # build statically linked binary with Rust
-cargo install --locked --root "$PREFIX" --path .
+cargo install --locked --root "$PREFIX" --path "$BUILD_ARGS" .
 
 # strip debug symbols
 "$STRIP" "$PREFIX/bin/py-spy"
