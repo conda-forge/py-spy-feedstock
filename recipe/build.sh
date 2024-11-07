@@ -2,6 +2,13 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
+export CARGO_PROFILE_RELEASE_STRIP=symbols
+export CARGO_PROFILE_RELEASE_LTO=fat
+
+cargo-bundle-licenses \
+    --format yaml \
+    --output THIRDPARTY.yml
+
 if [[ "${target_platform}" == osx-* ]]; then
   export RUSTFLAGS="-C link-args=-Wl,-rpath,${PREFIX}/lib"
 else
@@ -15,10 +22,4 @@ else
 fi
 
 # build statically linked binary with Rust
-cargo install $BUILD_ARGS --locked --root "$PREFIX" --path .
-
-# strip debug symbols
-"$STRIP" "$PREFIX/bin/py-spy"
-
-# remove extra build file
-rm -f "${PREFIX}/.crates.toml"
+cargo install $BUILD_ARGS --no-track --locked --root "$PREFIX" --path .
