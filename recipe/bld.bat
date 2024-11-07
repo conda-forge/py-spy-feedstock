@@ -1,5 +1,5 @@
 :: build
-cargo install --locked --root "%PREFIX%" --path . || goto :error
+cargo install --features unwind --locked --root "%PREFIX%" --path . || goto :error
 
 :: remove extra build file
 del /F /Q "%PREFIX%\.crates.toml"
