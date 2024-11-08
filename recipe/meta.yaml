@@ -11,8 +11,7 @@ source:
   sha256: 806602ce7972782cc9c1e383f339bfc27bfb822d42485e6a3e0530ae5040e1f0
 
 build:
-  number: 0
-  # Builds on Linux need a newer glibc: https://github.com/conda-forge/conda-forge.github.io/issues/900
+  number: 1
   missing_dso_whitelist:   # [osx]
     - /usr/lib/libresolv.9.dylib  # [osx]
 
@@ -21,9 +20,8 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
+    - cargo-bundle-licenses
   host:
-    - libunwind  # [linux]
-  run:
     - libunwind  # [linux]
 
 test:
@@ -35,7 +33,9 @@ about:
   license: MIT
   summary: Sampling profiler for Python programs
   license_family: MIT
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - THIRDPARTY.yml
 
 extra:
   recipe-maintainers:
