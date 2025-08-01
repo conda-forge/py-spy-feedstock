@@ -1,6 +1,6 @@
 {% set name = "py-spy" %}
 {% set pypi_name = "py_spy" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: py-spy
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ pypi_name }}-{{ version }}.tar.gz
-  sha256: 806602ce7972782cc9c1e383f339bfc27bfb822d42485e6a3e0530ae5040e1f0
+  sha256: e53aa53daa2e47c2eef97dd2455b47bb3a7e7f962796a86cc3e7dbde8e6f4db4
 
 build:
-  number: 2
+  number: 0
   missing_dso_whitelist:   # [osx]
     - /usr/lib/libresolv.9.dylib  # [osx]
 
