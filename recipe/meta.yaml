@@ -1,6 +1,6 @@
 {% set name = "py-spy" %}
 {% set pypi_name = "py_spy" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 
 package:
   name: py-spy
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ pypi_name }}-{{ version }}.tar.gz
-  sha256: e53aa53daa2e47c2eef97dd2455b47bb3a7e7f962796a86cc3e7dbde8e6f4db4
+  sha256: 90e600b27bb6bb40479637baca5a5b4bc2ba3395c93d889e672315d93042c4ae
 
 build:
   number: 0
@@ -23,6 +23,7 @@ requirements:
     - cargo-bundle-licenses
   host:
     - libunwind  # [linux]
+    - liblzma-devel  # [linux]
 
 test:
   commands:
