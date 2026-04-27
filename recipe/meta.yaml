@@ -23,7 +23,7 @@ requirements:
     - cargo-bundle-licenses
   host:
     - libunwind  # [linux]
-    - liblzma    # [linux]
+    - liblzma-devel  # [linux]
 
 test:
   commands:
