@@ -28,9 +28,9 @@ requirements:
     - cargo-bundle-licenses
   host:
     - if: linux
-      then: libunwind
-    - if: linux
-      then: liblzma-devel
+      then:
+        - libunwind
+        - liblzma-devel
 
 tests:
   - script:
