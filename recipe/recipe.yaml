@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: py-spy
+  pypi_name: py_spy
+  version: "0.4.2"
+
+package:
+  name: py-spy
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ pypi_name }}-${{ version }}.tar.gz
+  sha256: 90e600b27bb6bb40479637baca5a5b4bc2ba3395c93d889e672315d93042c4ae
+
+build:
+  number: 1
+  dynamic_linking:
+    missing_dso_allowlist:
+      - if: osx
+        then: /usr/lib/libresolv.9.dylib
+
+requirements:
+  build:
+    - ${{ stdlib("c") }}
+    - ${{ compiler('c') }}
+    - ${{ compiler('rust') }}
+    - cargo-bundle-licenses
+  host:
+    - if: linux
+      then:
+        - libunwind
+        - liblzma-devel
+
+tests:
+  - script:
+      - py-spy --help
+
+about:
+  license: MIT
+  summary: Sampling profiler for Python programs
+  license_file:
+    - LICENSE
+    - THIRDPARTY.yml
+  homepage: https://github.com/benfred/py-spy
+
+extra:
+  recipe-maintainers:
+    - benfred
+    - xhochy
