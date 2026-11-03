@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: py-spy
   pypi_name: py_spy
-  version: "0.4.2"
+  version: "0.4.3"
 
 package:
   name: py-spy
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ pypi_name }}-${{ version }}.tar.gz
-  sha256: 90e600b27bb6bb40479637baca5a5b4bc2ba3395c93d889e672315d93042c4ae
+  sha256: 65ac4319f8c20dcd1e2ea219935c6b4fd98179b0b7faf59181eae2680a85fad4
 
 build:
-  number: 1
+  number: 0
   dynamic_linking:
     missing_dso_allowlist:
       - if: osx
